@@ -19,7 +19,7 @@ makeCacheMatrix <- function(X = matrix()) {
         get <- function() X
         
         ##Function 3: setsolve
-        ##assingns a new value to "S". "S" is not empty anymore
+        ##assigns a new value to "S". "S" is not empty anymore
         setsolve <- function(solve) S <<- solve
         
         ##Function 4: getsolve
@@ -39,10 +39,10 @@ makeCacheMatrix <- function(X = matrix()) {
 ##object<-makeCacheMatrix(X)
 cacheSolve <- function(object, ...) {
         
-        ##inv gets the value of "S". Initially inv is also empty
+        ##inv gets the value of "S".
         inv <- object$getsolve()
         
-        ## if the inverse of matrix "X" has already been caluclated, then
+        ## if the inverse of matrix "X" has already been calculated, then
         ##"inv" is not empty and a message and the value of the inverse of 
         ##matrix "X" are shown.
         if(!is.null(inv)) {
@@ -50,7 +50,7 @@ cacheSolve <- function(object, ...) {
                 return(inv)
         }
         
-        ## if the inverse of matrix "X" has not yet been caluclated, then
+        ## if the inverse of matrix "X" has not yet been calculated, then
         ##"inv" is empty  and it has to be calculated
         matrix <- object$get()
         inv <- solve(matrix, ...)
